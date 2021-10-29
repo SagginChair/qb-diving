@@ -85,22 +85,22 @@ QBBoatshop.ShopBoats = {
     ["dinghy"] = {
         ["model"] = "dinghy",
         ["label"] = "Dinghy",
-        ["price"] = 15000
+        ["price"] = 90000
     },
     ["speeder"] = {
         ["model"] = "speeder",
         ["label"] = "Speeder",
-        ["price"] = 20000
+        ["price"] = 80000
     },
     ["marquis"] = {
         ["model"] = "marquis",
         ["label"] = "Marquis",
-        ["price"] = 30000
+        ["price"] = 40000
     },
     ["seashark"] = {
         ["model"] = "seashark",
         ["label"] = "Seashark",
-        ["price"] = 10000
+        ["price"] = 30000
     }
 }
 
