@@ -78,13 +78,13 @@ Citizen.CreateThread(function()
                             if not CoralLocation.PickedUp then
                                 DrawMarker(32, CoralLocation.coords.x, CoralLocation.coords.y, CoralLocation.coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 1.0, 0.4, 255, 223, 0, 255, true, false, false, false, false, false, false)
                                 if CoralDistance <= 1.5 then
-                                    DrawText3D(CoralLocation.coords.x, CoralLocation.coords.y, CoralLocation.coords.z, '[E] Collecting coral')
+                                    DrawText3D(CoralLocation.coords.x, CoralLocation.coords.y, CoralLocation.coords.z, '[E] Collect')
                                     if IsControlJustPressed(0, 38) then
                                         -- loadAnimDict("pickup_object")
-                                        local times = math.random(2, 5)
+                                        local times = math.random(4, 9)
                                         CallCops()
                                         FreezeEntityPosition(Ped, true)
-                                        QBCore.Functions.Progressbar("take_coral", "Collecting coral", times * 1000, false, true, {
+                                        QBCore.Functions.Progressbar("take_coral", "Collecting Supplies", times * 1000, false, true, {
                                             disableMovement = true,
                                             disableCarMovement = true,
                                             disableMouse = false,

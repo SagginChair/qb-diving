@@ -198,3 +198,16 @@ function HasCoral(src)
     end
     return retval
 end
+
+--coke pro
+
+QBCore.Functions.CreateCallback('qb-diving:server:get:checkcokebrick', function(source, cb)
+    local src = source
+    local Ply = QBCore.Functions.GetPlayer(src)
+    local thermite = Ply.Functions.GetItemByName("cokebrick")
+    if thermite ~= nil then
+        cb(true)
+    else
+        cb(false)
+    end
+end)

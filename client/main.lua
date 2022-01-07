@@ -81,3 +81,42 @@ AddEventHandler('qb-diving:client:UseJerrycan', function()
         QBCore.Functions.Notify('You are not in a boat', 'error')
     end
 end)
+
+--Coke Process
+
+RegisterNetEvent("qb-diving:ProcessCoke")
+AddEventHandler("qb-diving:ProcessCoke", function()
+    	QBCore.Functions.TriggerCallback('qb-diving:server:get:checkcokebrick', function(HasItems)
+    		if HasItems then
+                local seconds = math.random(9,15)
+                local circles = math.random(4,7)
+                local success = exports['qb-lock']:StartLockPickCircle(circles, seconds, success)
+                if success then
+                    TriggerServerEvent('QBCore:Server:RemoveItem', "cokebrick", 1)
+				QBCore.Functions.Progressbar("pickup_sla", "Processing", 30000, false, true, {
+					disableMovement = true,
+					disableCarMovement = true,
+					disableMouse = false,
+					disableCombat = true,
+				}, {
+                    animDict = "mini@repair",
+                    anim = "fixing_a_ped",
+					flags = 49,
+				}, {}, {}, function() -- Done
+                    local cokebags = math.random(15, 25)
+                    QBCore.Functions.Notify("Gathering Supplies", "success")  
+                    Wait(5000)
+                    TriggerServerEvent('QBCore:Server:AddItem', "cokebaggy", cokebags)
+                    TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["cokebaggy"], "add") 
+				end, function()
+					QBCore.Functions.Notify("Cancelled..", "error")
+                    TriggerServerEvent('QBCore:Server:AddItem', "cokebrick", 1)
+				end)
+			else
+   				QBCore.Functions.Notify("Failed", "error")
+			end
+        else
+            QBCore.Functions.Notify("Missing Something", "error")
+		end
+    end)
+end)

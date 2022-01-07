@@ -222,8 +222,8 @@ QBDiving.Locations = {
                 },
             }
         },
-        DefaultCoral = 4,
-        TotalCoral = 4,
+        DefaultCoral = 3,
+        TotalCoral = 3,
     },
     [6] = {
         label = "Location 6",
@@ -248,8 +248,8 @@ QBDiving.Locations = {
                 },
             }
         },
-        DefaultCoral = 4,
-        TotalCoral = 4,
+        DefaultCoral = 3,
+        TotalCoral = 3,
     },
     [7] = {
         label = "Location 7",
@@ -274,20 +274,20 @@ QBDiving.Locations = {
                 },
             }
         },
-        DefaultCoral = 4,
-        TotalCoral = 4,
+        DefaultCoral = 3,
+        TotalCoral = 3,
     },
 }
 
 --ALSO CHANGE VALUES IN SERVER/MAIN.LUA
 QBDiving.CoralTypes = {
     [1] = {
-        item = "dendrogyra_coral",
-        maxAmount = math.random(1, 5),
+        item = "cokebrick",
+        maxAmount = 1,
         price = math.random(70, 100),
     },
     [2] = {
-        item = "antipatharia_coral",
+        item = "cokebaggy",
         maxAmount = math.random(2, 7),
         price = math.random(50, 70),
     }
@@ -295,9 +295,6 @@ QBDiving.CoralTypes = {
 
 QBDiving.SellLocations = {
     [1] = {
-    ["coords"] = vector3(-1684.13, -1068.91, 13.15)
-        -- ["x"] = -1684.13,
-        -- ["y"] = -1068.91,
-        -- ["z"] = 13.15
+    ["coords"] = vector3(-137.61, -1473.72, -1.2)
 }
 }
